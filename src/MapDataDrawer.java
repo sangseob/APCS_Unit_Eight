@@ -113,36 +113,30 @@ public class MapDataDrawer
                 if (Math.abs(current - forward) < Math.abs(current - down)) {
                     g.fillRect(c, a, 1, 1);
                     elevation+= Math.abs(current - forward);
-                }
-                else if (Math.abs(current - down) < Math.abs(current - forward)) {
+                } else if (Math.abs(current - down) < Math.abs(current - forward)) {
                     a+=1;
                     g.fillRect(c, a, 1, 1);
                     elevation+= Math.abs(current - down);
-                }
-                else {
+                } else {
                     g.fillRect(c, a, 1, 1);
                     elevation+= Math.abs(current - forward);
                 }
-            }
-            else if (a < grid.length-1) {
+            } else if (a < grid.length-1) {
                 int forward = grid[a][c];
                 int up = grid[a - 1][c];
                 int down = grid[a + 1][c];
                 if (Math.abs(current - forward) < Math.abs(current - up) && Math.abs(current - forward) < Math.abs(current - down)) {
                     g.fillRect(c, a, 1, 1);
                     elevation+= Math.abs(current - forward);
-                }
-                else if (Math.abs(current - up) < Math.abs(current - forward) && Math.abs(current - up) < Math.abs(current - down)) {
+                } else if (Math.abs(current - up) < Math.abs(current - forward) && Math.abs(current - up) < Math.abs(current - down)) {
                     a-=1;
                     g.fillRect(c, a, 1, 1);
                     elevation+= Math.abs(current - up);
-                }
-                else if (Math.abs(current - down) < Math.abs(current - up) && Math.abs(current - down) < Math.abs(current - forward)) {
+                } else if (Math.abs(current - down) < Math.abs(current - up) && Math.abs(current - down) < Math.abs(current - forward)) {
                     a+=1;
                     g.fillRect(c, a, 1, 1);
                     elevation+= Math.abs(current - down);
-                }
-                else {
+                } else {
                     if (Math.abs(current - forward) == Math.abs(current - up) || Math.abs(current - forward) == Math.abs(current - down)) {
                         g.fillRect(c, a, 1, 1);
                         elevation+= Math.abs(current - forward);
@@ -161,20 +155,17 @@ public class MapDataDrawer
                         }
                     }
                 }
-            }
-            else {
+            } else {
                 int forward = grid[a][c];
                 int up = grid[a - 1][c];
                 if (Math.abs(current - forward) < Math.abs(current - up)) {
                     g.fillRect(c, a, 1, 1);
                     elevation+= Math.abs(current - forward);
-                }
-                else if (Math.abs(current - up) < Math.abs(current - forward)) {
+                } else if (Math.abs(current - up) < Math.abs(current - forward)) {
                     a-=1;
                     g.fillRect(c, a, 1, 1);
                     elevation+= Math.abs(current - up);
-                }
-                else {
+                } else {
                     g.fillRect(c, a, 1, 1);
                     elevation+= Math.abs(current - forward);
                 }
@@ -197,8 +188,7 @@ public class MapDataDrawer
                     x = temp;
                     index = r;
                 }
-            }
-            else if (drawLowestElevPath(g, r) > drawLowestElevPath(g, (r+1))) {
+            } else if (drawLowestElevPath(g, r) > drawLowestElevPath(g, (r+1))) {
                 temp = drawLowestElevPath(g, (r + 1));
                 if(temp < x) {
                     x = temp;
